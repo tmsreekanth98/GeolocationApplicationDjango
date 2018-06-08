@@ -1,0 +1,20 @@
+{% extends 'location/base.html' %}
+
+{% block 'content' %}
+  <div class="jumbotron">
+    <p></p>
+    <h2>Enter the IP Address to GEOLOCATE!</h2>
+    <form method="POST" class="form-group">
+      {% csrf_token %}
+      {% for i in form %}
+        {{i.errors}}
+        <input type="text" class="form-control-plaintext" placeholder="{{i.name}}" name="{{i.name}}">
+      {% endfor %}
+      <p></p>
+      <input class="btn btn-success" type="submit" value="Go">
+    </form>
+
+
+
+  </div>
+{% endblock %}
